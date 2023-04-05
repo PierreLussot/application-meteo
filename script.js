@@ -8,7 +8,9 @@ search.addEventListener("click", () => {
   const APIKey = "c8fd2fc88cf27c6fa8a0be11db353712";
   const city = document.querySelector(".search-box input").value;
   console.log(city);
-  if (city === "") return;
+  if (city === "") {
+    return;
+  }
 
   fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}`
@@ -30,7 +32,9 @@ search.addEventListener("click", () => {
       const image = document.querySelector(".weather-box img");
       const temperature = document.querySelector(".weather-box .temperature");
       const description = document.querySelector(".weather-box .description");
-      const humidity = document.querySelector(".weather-details .humidity span");
+      const humidity = document.querySelector(
+        ".weather-details .humidity span"
+      );
       const wind = document.querySelector(".weather-details .wind span");
 
       switch (json.weather[0].main) {
